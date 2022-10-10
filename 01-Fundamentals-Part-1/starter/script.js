@@ -1,16 +1,22 @@
-        /* let js = 'amazing';
-        if (js === 'amazing') alert('JavaScript is FUN!');
-        */
 
-        let country = 'United Kingdom';
-        let continent = 'Europe';
+
+        
+        //let js = 'amazing';
+        //if (js === 'amazing') alert('JavaScript is FUN!');
+        
+
+        const country = 'United Kingdom';
+        const continent = 'Europe';
         let population = 68693101;
 
-        /*
+        
         console.log(country);
+        console.log(typeof country);
         console.log(continent);
+        
         console.log(population);
-        */
+        console.log(typeof population);
+        
 
         // Use let to declare
         // Use the variable name to change it 
@@ -20,9 +26,17 @@
         javascriptIsFun = 'YES!';
         //console.log('The type is '+ typeof javascriptIsFun);
 
-        let isIsland = true;
-        let language;
+        const isIsland = true;
+        const language = 'English';
+
+        console.log(country + ' is an island: ' +typeof isIsland);
         console.log(typeof isIsland);
-        console.log(typeof country);
-        console.log(typeof population);
+
+        console.log(language);
         console.log(typeof language);
+        
+        
+
+
+        
+
