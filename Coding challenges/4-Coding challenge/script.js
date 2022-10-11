@@ -20,7 +20,7 @@ Hints:
 */
 
 // Data : Test for bill values 275, 40 and 430
-billValue = 275;
+billValue = 430;
 
-tip = billValue >= 50 && billValue <= 300 ? billValue * 15 / 100 : billValue * 20 / 100;
+tip = billValue >= 50 && billValue <= 300 ? billValue * 0.15 : billValue * 0.2;
 console.log(`The bill was ${billValue}, the tip was ${tip}, and the total value ${billValue+tip}`);
