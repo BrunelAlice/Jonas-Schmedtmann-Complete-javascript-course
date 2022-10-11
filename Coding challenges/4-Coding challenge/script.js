@@ -1,4 +1,3 @@
-
 /*
 Steven wants to build a very simple tip calculator for whenever he goes eating in a
 restaurant. In his country, it's usual to tip 15% if the bill value is between 50 and
@@ -20,7 +19,9 @@ Hints:
 */
 
 // Data : Test for bill values 275, 40 and 430
-billValue = 430;
+const billValue = 430;
 
-tip = billValue >= 50 && billValue <= 300 ? billValue * 0.15 : billValue * 0.2;
-console.log(`The bill was ${billValue}, the tip was ${tip}, and the total value ${billValue+tip}`);
+const tip =
+    billValue >= 50 && billValue <= 300 ? billValue * 0.15 : billValue * 0.2;
+console.log(
+    `The bill was ${billValue}, the tip was ${tip}, and the total value ${billValue + tip}`);
