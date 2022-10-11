@@ -24,7 +24,7 @@ whether Mark has a higher BMI than John.
 let markMass = 78;
 let johnMass = 92;
 let markHeight = 1.69;
-let johnHeight = 1.88;
+let johnHeight = 1.95;
 
 let markBMI = markMass / markHeight ** 2;
 let johnBMI = johnMass / johnHeight ** 2;
@@ -45,3 +45,7 @@ johnBMI = johnMass / johnHeight ** 2;
 markHigherBMI = markBMI > johnBMI;
 
 console.log('Mark ', markBMI, 'John ', johnBMI, markHigherBMI);
+
+/* ABOUT USING CONST OR NOT
+ I choose to use let to be able to send each data set to the console log, but in the correction Jonas used constants to store the data and simply commented out the code to  reduce it as you don't need to repeat calculations.
+ * /
