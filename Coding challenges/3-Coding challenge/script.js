@@ -1,58 +1,67 @@
 
 /*
-Mark and John are trying to compare their BMI (Body Mass Index), which is
-calculated using the formula:
-BMI = mass / height ** 2 = mass / (height * height) (mass in kg
-and height in meter).
-
+There are two gymnastics teams, Dolphins and Koalas. They compete against each
+other 3 times. The winner with the highest average score wins a trophy!
 Your tasks:
+    1. Calculate the average score for each team, using the test data below
 
-    1. Store Mark's and John's mass and height in variables
-    2. Calculate both their BMIs using the formula (you can even implement both
-versions)
-    3. Create a Boolean variable 'markHigherBMI' containing information about
-whether Mark has a higher BMI than John.
+    2. Compare the team's average scores to determine the winner of the competition,
+        and print it to the console. Don't forget that there can be a draw, so test for that
+        as well (draw means they have the same average score)
 
-        Test data:
-            § Data 1: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95
-        m tall.
-            § Data 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1.76
-        m tall.
+    3. Bonus 1: Include a requirement for a minimum score of 100. With this rule, a
+        team only wins if it has a higher score than the other team, and the same time a
+        score of at least 100 points. Hint: Use a logical operator to test for minimum
+        score, as well as multiple else-if blocks 😉
+
+    4. Bonus 2: Minimum score also applies to a draw! So a draw only happens when
+        both teams have the same score and both have a score greater or equal 100
+        points. Otherwise, no team wins the trophy
 */
 
-// First data set
-let markMass = 78;
-let johnMass = 92;
-let markHeight = 1.69;
-let johnHeight = 1.95;
+// First data set : Data 1: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110
+const averageScoreDolphins = (96 + 108 + 89) / 3;
+const averageScoreKoalas = (88 + 91 + 110) / 3;
 
-let markBMI = markMass / markHeight ** 2;
-let johnBMI = johnMass / johnHeight ** 2;
+// Second data set : Data Bonus 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
+//const averageScoreDolphins = (97 + 112 + 101) / 3;
+//const averageScoreKoalas = (109 + 95 + 123) / 3;
 
-let markHigherBMI = markBMI > johnBMI;
+// Third data set : Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
+//const averageScoreDolphins = (97 + 112 + 101) / 3;
+//const averageScoreKoalas = (109 + 95 + 106) / 3;
 
-console.log('Mark ', markBMI, 'John ', johnBMI, markHigherBMI);
+let winner = Math.max(averageScoreDolphins, averageScoreKoalas);
 
-// Second data set
-markMass = 95;
-johnMass = 85;
-markHeight = 1.88;
-johnHeight = 1.76;
-
-markBMI = markMass / markHeight ** 2;
-johnBMI = johnMass / johnHeight ** 2;
-
-markHigherBMI = markBMI > johnBMI;
-
-console.log('Mark ', markBMI, 'John ', johnBMI, markHigherBMI);
-
-/* ABOUT USING CONST OR NOT
- I choose to use let to be able to send each data set to the console log, but in the correction Jonas used constants to store the data and simply commented out the code to  reduce it as you don't need to repeat calculations.
- */
-
-if (markHigherBMI == true) {
-    console.log(`Mark's BMI (${markBMI}) is higher than John's (${johnBMI})!`);
+// Answer to 1
+if (averageScoreDolphins === averageScoreKoalas) {
+    console.log(`It's a draw`);
+} else if (winner === averageScoreDolphins) {
+    console.log(`Winner are Dolphins`);
 } else {
-    console.log(`John's BMI (${johnBMI}) is higher than Mark's (${markBMI})!`);
+    console.log(`Winner are Koalas`);
 };
 
+console.log(`Dolphins : ${averageScoreDolphins}, Koalas : ${averageScoreKoalas}`);
+
+// Answer to 2
+if (winner > 100 && averageScoreDolphins > averageScoreKoalas ) {
+    console.log(`Winner are Dolphins`);
+}  else if (winner < 100) {
+        console.log(`Nobody wins`);
+} else if (averageScoreKoalas === averageScoreDolphins) {
+    console.log(`It's a draw`);
+} else {
+    console.log(`Winner are Koalas`);
+};
+
+// Answer to 3
+if (winner > 100 && averageScoreDolphins > averageScoreKoalas) {
+    console.log(`Winner are Dolphins`);
+} else if (winner < 100) {
+    console.log(`Nobody wins`);
+} else if (winner >= 100 && averageScoreKoalas === averageScoreDolphins) {
+    console.log(`It's a draw`);
+} else {
+    console.log(`Winner are Koalas`);
+};
