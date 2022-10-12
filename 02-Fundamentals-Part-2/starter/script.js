@@ -40,4 +40,6 @@ const popUK = percentageOfWorld1(70);
 console.log(popBrazil, popFrance, popUK);
 
 // Arrow functions
-const 
+const percentageOfWorld3 = population => (population / 7900) * 100;
+const brazil = percentageOfWorld3(214);
+console.log(brazil);
