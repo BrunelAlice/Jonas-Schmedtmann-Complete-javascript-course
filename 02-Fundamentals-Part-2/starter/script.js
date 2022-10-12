@@ -20,9 +20,8 @@ console.log(brazil);
 */
 
 // Function declarations vs. expressions 
-// [Write when to use each of them here]
 
-// Function declaration
+// Function declaration : can be used before it's declared
 function percentageOfWorld1(population) {
     return (population / 7900) * 100;
 };
@@ -32,7 +31,7 @@ const populationFrance = percentageOfWorld1(60);
 const populationUK = percentageOfWorld1(70);
 console.log(populationBrazil, populationFrance, populationUK);
 
-// Function expression
+// Function expression : function value stored in a variable
 const percentageOfWorld2 = function percentageOfWorld1(population) {
     return (population / 7900) * 100;
 };
@@ -42,7 +41,7 @@ const popFrance = percentageOfWorld1(60);
 const popUK = percentageOfWorld1(70);
 console.log(popBrazil, popFrance, popUK);
 
-// Arrow functions
+// Arrow functions : shorter, has no 'this' keyword
 const percentageOfWorld3 = population => (population / 7900) * 100;
 const brazil = percentageOfWorld3(214);
 
