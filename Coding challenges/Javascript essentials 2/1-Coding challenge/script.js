@@ -5,8 +5,8 @@
 
 const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
 
-const averageDolphins = calcAverage(44, 23, 71);
-const averageKoalas = calcAverage(65, 54, 49);
+let averageDolphins = calcAverage(44, 23, 71);
+let averageKoalas = calcAverage(65, 54, 49);
 
 const checkWinner = (averageDolphins, averageKoalas) => {
     const winnerDolphins = averageDolphins >= 2 * averageKoalas;
