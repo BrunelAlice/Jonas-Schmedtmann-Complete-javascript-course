@@ -10,17 +10,21 @@ let averageKoalas = calcAverage(65, 54, 49);
 
 const checkWinner = (averageDolphins, averageKoalas) => {
       if (averageDolphins >= 2 * averageKoalas) {
-        return `Dolphins wins (${averageDolphins} vs. ${averageKoalas}).`;
+          console.log(`Dolphins wins (${averageDolphins} vs. ${averageKoalas}).`);
 
     } else if (averageKoalas >= 2 * averageDolphins) {
-        return `Koalas wins (${averageKoalas} vs. ${averageDolphins}).`;
+          console.log(`Koalas wins (${averageKoalas} vs. ${averageDolphins}).`);
 
     } else {
-        return `No winner.`
+           console.log(`No winner.`);
     }
-};
-
+}
 
 checkWinner(averageDolphins, averageKoalas);
 
+
 // Second data set :Dolphins score 85, 54, 41. Koalas score 23, 34, 27
+averageDolphins = calcAverage(85, 54, 41);
+averageKoalas = calcAverage(23, 34, 27);
+
+checkWinner(averageDolphins, averageKoalas);
