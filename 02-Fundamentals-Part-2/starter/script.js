@@ -1,11 +1,14 @@
 'use strict';
 
-function describeCountry(country, population, capitalCity) {
+
+
+/*
+ 
+ function describeCountry(country, population, capitalCity) {
     const result = `${country} has ${population} people and its capital city is ${capitalCity}.`;
     return result;
 };
 
-/*
 const unitedKingdom = describeCountry('United Kingdom', '70 000 000', 'London');
 console.log(unitedKingdom);
 
@@ -16,7 +19,8 @@ const brazil = describeCountry('Brazil', '214 000 000', 'Brasilia');
 console.log(brazil);
 */
 
-// Function declarations vs. expressions
+// Function declarations vs. expressions 
+// [Write when to use each of them here]
 
 // Function declaration
 function percentageOfWorld1(population) {
@@ -36,10 +40,16 @@ const percentageOfWorld2 = function percentageOfWorld1(population) {
 const popBrazil = percentageOfWorld1(214);
 const popFrance = percentageOfWorld1(60);
 const popUK = percentageOfWorld1(70);
-
 console.log(popBrazil, popFrance, popUK);
 
 // Arrow functions
 const percentageOfWorld3 = population => (population / 7900) * 100;
 const brazil = percentageOfWorld3(214);
-console.log(brazil);
+
+
+// Function calling function
+function describePopulation(country, population) {
+    return `${country} has ${population} which is about ${percentageOfWorld1(population)}% of the world`;
+};
+
+console.log(describePopulation('Brazil', 214), describePopulation('France', 60), describePopulation('United Kingdom', 70));
