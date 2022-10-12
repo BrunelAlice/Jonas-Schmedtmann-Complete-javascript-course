@@ -18,6 +18,7 @@ console.log(brazil);
 
 // Function declarations vs. expressions
 
+// Function declaration
 function percentageOfWorld1(population) {
     return (population / 7900) * 100;
 };
@@ -27,7 +28,7 @@ const populationFrance = percentageOfWorld1(60);
 const populationUK = percentageOfWorld1(70);
 console.log(populationBrazil, populationFrance, populationUK);
 
-
+// Function expression
 const percentageOfWorld2 = function percentageOfWorld1(population) {
     return (population / 7900) * 100;
 };
@@ -36,4 +37,7 @@ const popBrazil = percentageOfWorld1(214);
 const popFrance = percentageOfWorld1(60);
 const popUK = percentageOfWorld1(70);
 
-console.log(populationBrazil, popFrance, popUK);
+console.log(popBrazil, popFrance, popUK);
+
+// Arrow functions
+const 
