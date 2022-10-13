@@ -91,17 +91,23 @@ const myCountry = {
         return `${this.country} has ${this.language}-speaking people, ${neighbours.length} neighbouring countries and a capital called ${this.capital}.`;
     },
     //THIS WORKS
+    
     checkIsland: function () {
         return (this.isIsland = this.neighbours.length === 0 ? true : false);
     },
+    
 
     //THIS DOESN'T WORK
-    /*
-     
+
+     /*
     checkIsland: function () {
         return this.neighbours.length === 0 ? true : false;
     },
-    isIsland: this.checkIsland, // returns undefined because apparently "this" keyword doesn't refer to the right scope (?)
+    isIsland: this.checkIsland(), // THIS WOULD NEVER WORK 
+
+    //WHY THIS DOESN'T WORK //
+    First, assigning a calculated function to a propriety would require the object to calculate its own propriety when called which would required unecessary efforts.
+    Then this keyword is used in function body, objects doesn’t have this context. this refers to an object that is calling the function with that this keyword. isIsland: this.checkIsIsland won’t work because it's not previously called, and also this refers to the global object, or undefined in strict mode
 
     */
 };
