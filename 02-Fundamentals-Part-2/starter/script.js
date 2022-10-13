@@ -27,7 +27,7 @@ function percentageOfWorld1(population) {
 const populationBrazil = percentageOfWorld1(214);
 const populationFrance = percentageOfWorld1(60);
 const populationUK = percentageOfWorld1(70);
-console.log(populationBrazil, populationFrance, populationUK);
+//console.log(populationBrazil, populationFrance, populationUK);
 
 // Function expression : function value stored in a variable
 const percentageOfWorld2 = function percentageOfWorld1(population) {
@@ -37,7 +37,7 @@ const percentageOfWorld2 = function percentageOfWorld1(population) {
 const popBrazil = percentageOfWorld1(214);
 const popFrance = percentageOfWorld1(60);
 const popUK = percentageOfWorld1(70);
-console.log(popBrazil, popFrance, popUK);
+//console.log(popBrazil, popFrance, popUK);
 
 // Arrow functions : shorter, has no 'this' keyword
 const percentageOfWorld3 = (population) => (population / 7900) * 100;
@@ -55,7 +55,7 @@ function describePopulation(country, population) {
 //--------------ARRAYS-------------//
 
 const populations = [214, 60, 70, 235];
-console.log(populations.length === 4);
+//console.log(populations.length === 4);
 const percentages = [
     percentageOfWorld1(populations[0]),
     percentageOfWorld1(populations[1]),
@@ -63,18 +63,64 @@ const percentages = [
     percentageOfWorld1(populations[3]),
 ];
 
-console.log(percentages);
+//console.log(percentages);
 
 //--------------ARRAYS METHODS-------------//
 const neighbours = ["Spain", "Germany", "Italy"];
 neighbours.push("Utopia");
-console.log(neighbours);
+//console.log(neighbours);
 neighbours.pop();
-console.log(neighbours);
+//console.log(neighbours);
 
 if (neighbours.includes("Germany")) {
-    console.log("You must be in Europe!");
+    //console.log("You must be in Europe!");
 }
 
 neighbours[neighbours.indexOf("Germany")] = "Belgium";
-console.log(neighbours);
+//console.log(neighbours);
+
+//--------------OBJECTS-------------//
+
+const myCountry = {
+    country: "France",
+    capital: "Paris",
+    language: "French",
+    population: 60,
+    neighbours: ["Spain", "Germany", "Italy"],
+    describe: function () {
+        return `${this.country} has ${this.language}-speaking people, ${neighbours.length} neighbouring countries and a capital called ${this.capital}.`;
+    },
+    //THIS WORKS
+    checkIsland: function () {
+        return (this.isIsland = this.neighbours.length === 0 ? true : false);
+    },
+
+    //THIS DOESN'T WORK
+    /*
+     
+    checkIsland: function () {
+        return this.neighbours.length === 0 ? true : false;
+    },
+    isIsland: this.checkIsland, // returns undefined because apparently "this" keyword doesn't refer to the right scope (?)
+
+    */
+};
+
+// If checkIsland isn't called before, myCountry.isIsland will return undefined
+console.log(myCountry.checkIsland()); // false
+console.log(myCountry.isIsland); // false
+
+/*
+console.log(
+    `${myCountry.country} has ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}.`
+);
+*/
+
+console.log(myCountry.describe());
+
+// LECTURE: Dot vs.Bracket Notation
+//console.log(myCountry.population);
+myCountry.population += 2;
+//console.log(myCountry.population);
+//myCountry["population"] -= 2;
+console.log(myCountry.population);
