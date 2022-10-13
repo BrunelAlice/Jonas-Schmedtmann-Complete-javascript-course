@@ -107,7 +107,7 @@ const myCountry = {
 
     //WHY THIS DOESN'T WORK //
     First, assigning a calculated function to a propriety would require the object to calculate its own propriety when called which would required unecessary efforts.
-    Then this keyword is used in function body, objects doesn’t have this context. this refers to an object that is calling the function with that this keyword. isIsland: this.checkIsIsland won’t work because it's not previously called, and also this refers to the global object, or undefined in strict mode
+    Then this keyword is used in function body, objects doesn’t have this context. this refers to an object that is calling the function with that this keyword. isIsland: this.checkIsIsland won’t work because it's not previously called, and also this refers to the global object, or undefined in strict mode and because it is an anonymous function
 
     */
 };
