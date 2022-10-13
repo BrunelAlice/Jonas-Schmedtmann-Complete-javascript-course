@@ -64,3 +64,17 @@ const percentages = [
 ];
 
 console.log(percentages);
+
+//--------------ARRAYS METHODS-------------//
+const neighbours = ["Spain", "Germany", "Italy"];
+neighbours.push("Utopia");
+console.log(neighbours);
+neighbours.pop();
+console.log(neighbours);
+
+if (neighbours.includes("Germany")) {
+    console.log("You must be in Europe!");
+}
+
+neighbours[neighbours.indexOf("Germany")] = "Belgium";
+console.log(neighbours);
