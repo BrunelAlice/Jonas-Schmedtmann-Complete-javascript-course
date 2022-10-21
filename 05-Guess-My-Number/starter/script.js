@@ -26,6 +26,8 @@ document.querySelector(".check").addEventListener("click", function () {
             displayMessage("Not a number");
         } else if (guess === secretNumber) {
             displayMessage("Correct number!");
+            highScore = document.querySelector(".score").textContent;
+            document.querySelector(".highscore").textContent = highScore;
         } else if (guess != secretNumber) {
             guess > secretNumber
                 ? displayMessage("Too high")
