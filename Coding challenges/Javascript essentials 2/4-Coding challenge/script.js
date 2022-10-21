@@ -34,11 +34,12 @@ const tips = [];
 const totals = [];
 
 for (let i = 0; i < bills.length; i++) {
-    tips.push(calcTip(bills[i]));
-    totals.push(calcTip(bills[i]) + bills[i]);
+// It's better to calculate the value only once
+    const tip = calcTip(bills[i]);
+    tips.push(tip);
+    totals.push(tip + bills[i]);
 }
 
 
-console.log(tips);
-console.log(totals);
+console.log(bills, tips, totals);
 console.log(calcAverage(totals));
