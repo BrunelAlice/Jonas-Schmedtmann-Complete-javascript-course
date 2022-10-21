@@ -130,3 +130,5 @@ myCountry.population += 2;
 //console.log(myCountry.population);
 //myCountry["population"] -= 2;
 console.log(myCountry.population);
+
+
